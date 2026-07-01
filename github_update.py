@@ -2,10 +2,13 @@
 Τρέχει μέσα στο GitHub Actions κάθε μέρα.
 Τραβάει τιμές μετοχών από το yfinance και προσθέτει μία γραμμή ανά μετοχή
 στο αρχείο prices.csv (μέσα στο ίδιο repository).
+
+Η ημερομηνία που καταγράφεται είναι η ημερομηνία της τελευταίας
+ολοκληρωμένης συνεδρίασης όπως επιστρέφεται από το yfinance,
+ΟΧΙ η σημερινή ημερομηνία εκτέλεσης.
 """
 
 import csv
-import datetime
 import os
 
 import yfinance as yf
@@ -29,15 +32,10 @@ def load_existing_dates():
 
 
 def main():
-    today = datetime.date.today().strftime("%d/%m/%Y")
     existing_dates = load_existing_dates()
-
-    if today in existing_dates:
-        print(f"Υπάρχουν ήδη δεδομένα για {today}. Δεν θα προστεθούν διπλότυπα.")
-        return
-
     file_exists = os.path.exists(CSV_PATH)
     rows_written = 0
+    session_date = None  # θα οριστεί από την πρώτη μετοχή
 
     with open(CSV_PATH, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -52,6 +50,17 @@ def main():
                 if hist.empty or len(hist) < 2:
                     print(f"Παράλειψη {sym}: ανεπαρκή δεδομένα")
                     continue
+
+                # Ημερομηνία από το index του yfinance (τελευταία κλειστή συνεδρίαση)
+                trade_date = hist.index[-1].strftime("%d/%m/%Y")
+
+                # Αρχικοποίηση session_date από την πρώτη μετοχή
+                if session_date is None:
+                    session_date = trade_date
+                    if trade_date in existing_dates:
+                        print(f"Υπάρχουν ήδη δεδομένα για {trade_date}. Δεν θα προστεθούν διπλότυπα.")
+                        return
+
                 price = round(float(hist["Close"].iloc[-1]), 4)
                 prev_close = round(float(hist["Close"].iloc[-2]), 4)
                 change_pct = round((price - prev_close) / prev_close, 6)
@@ -63,10 +72,10 @@ def main():
                 print(f"Σφάλμα στο {sym}: {e}")
                 continue
 
-            writer.writerow([today, sym, name, price, prev_close, change_pct])
+            writer.writerow([trade_date, sym, name, price, prev_close, change_pct])
             rows_written += 1
 
-    print(f"Προστέθηκαν {rows_written} γραμμές για {today}.")
+    print(f"Προστέθηκαν {rows_written} γραμμές για {session_date}.")
 
 
 if __name__ == "__main__":
