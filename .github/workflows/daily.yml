@@ -2,8 +2,8 @@ name: Daily Stock Update
 
 on:
   schedule:
-    # 21:00 UTC = 23:00 ή 00:00 ώρα Ελλάδας (ανάλογα με θερινή/χειμερινή ώρα)
-    - cron: '0 21 * * 1-5'
+    # 22:00 UTC = 01:00 ώρα Ελλάδας (1 ώρα μετά το κλείσιμο αμερικανικής αγοράς)
+    - cron: '0 22 * * 1-5'
   workflow_dispatch:   # επιτρέπει και χειροκίνητο "Run workflow" από το GitHub
 
 permissions:
