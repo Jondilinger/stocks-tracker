@@ -3500,21 +3500,35 @@ Date,Symbol,Name,Price,Prev Close,Change %
 18/11/2026,UNH,UnitedHealth Group Incorporated,349.91,389.68,-0.102058
 18/11/2026,V,Visa Inc.,415.22,416.77,-0.003719
 19/11/2026,AAPL,Apple Inc.,349.21,352.45,-0.009193
+19/11/2026,ABBV,AbbVie Inc.,283.54,286.01,-0.008636
 19/11/2026,AMD,"Advanced Micro Devices, Inc.",489.19,530.14,-0.077244
 19/11/2026,AMZN,"Amazon.com, Inc.",257.37,267.74,-0.038732
+19/11/2026,ANET,"Arista Networks, Inc.",189.59,193.94,-0.02243
 19/11/2026,ASML,ASML Holding N.V. - New York Re,1356.2,1395.27,-0.028002
+19/11/2026,ASTS,"AST SpaceMobile, Inc.",25.55,25.49,0.002354
+19/11/2026,BABA,Alibaba Group Holding Limited,83.31,84.37,-0.012564
 19/11/2026,BRK.B,Berkshire Hathaway Inc. New,572.04,574.62,-0.00449
+19/11/2026,BRLT,"Brilliant Earth Group, Inc.",1.11,1.18,-0.059322
 19/11/2026,CCJ,Cameco Corporation,61.42,62.44,-0.016336
 19/11/2026,ENS,EnerSys,132.5,135.86,-0.024731
 19/11/2026,GOOGL,Alphabet Inc.,272.66,282.44,-0.034627
 19/11/2026,INTC,Intel Corporation,55.72,54.67,0.019206
+19/11/2026,IONQ,"IonQ, Inc.",22.71,23.48,-0.032794
 19/11/2026,KO,Coca-Cola Company (The),96.09,98.09,-0.020389
 19/11/2026,MELI,"MercadoLibre, Inc.",1355.49,1423.11,-0.047516
+19/11/2026,META,"Meta Platforms, Inc.",596.22,616.38,-0.032707
 19/11/2026,MRVL,"Marvell Technology, Inc.",138.47,145.54,-0.048578
 19/11/2026,MSFT,Microsoft Corporation,498.3,507.31,-0.01776
+19/11/2026,NBIS,Nebius Group N.V.,96.92,106.96,-0.093867
 19/11/2026,NVDA,NVIDIA Corporation,145.98,150.96,-0.032989
 19/11/2026,O,Realty Income Corporation,57.66,58.28,-0.010638
+19/11/2026,OKLO,Oklo Inc.,20.84,21.8,-0.044037
 19/11/2026,PEP,"Pepsico, Inc.",139.0,141.87,-0.02023
+19/11/2026,PLTR,Palantir Technologies Inc.,153.68,156.67,-0.019085
+19/11/2026,QBTS,D-Wave Quantum Inc.,7.31,7.69,-0.049415
+19/11/2026,RGTI,"Rigetti Computing, Inc.",8.06,8.33,-0.032413
+19/11/2026,SMR,NuScale Power Corporation,3.81,3.91,-0.025575
+19/11/2026,SOFI,"SoFi Technologies, Inc.",13.53,14.11,-0.041106
 19/11/2026,TSLA,"Tesla, Inc.",374.41,383.72,-0.024262
 19/11/2026,TSM,Taiwan Semiconductor Manufactur,352.09,362.62,-0.029039
 19/11/2026,UEC,Uranium Energy Corp.,5.76,5.92,-0.027027
